@@ -5,9 +5,10 @@ from mrjob.job import MRJob
 class MRDegreeCentrality(MRJob):
 
     def mapper(self, _, line):
-        start, end = line.split(',')
-        yield str(start), 1
-        yield str(end), 1
+        start, end, weight = line.split(',')
+        weight = int(weight)
+        yield str(start), weight
+        yield str(end), weight
 
     def combiner(self, key, values):
         yield key, sum(values)
