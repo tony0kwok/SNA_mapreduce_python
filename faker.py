@@ -1,5 +1,6 @@
 import random
 from datetime import datetime
+import sys
 
 def vertexName(max):
     for x in xrange(max):
@@ -42,8 +43,13 @@ def genRandomGraph(nodeNum, p = 0, fo = "input.txt"):
 
 
 if __name__ == '__main__':
+    nodes = int(sys.argv[1])
+    p = float(sys.argv[2])
+    fo = "edge_list.txt"
+    if len(sys.argv)>=4:
+        fo = sys.argv[3]
     start_time = datetime.now()
-    genRandomGraph(100,1,"sample_input.txt")
+    genRandomGraph(nodes,p,fo)
     end_time = datetime.now()
     elapsed_time = end_time - start_time
     print 'elapsed_time: '+str(elapsed_time)
