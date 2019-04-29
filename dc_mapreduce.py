@@ -1,11 +1,13 @@
 from datetime import datetime
 from mrjob.job import MRJob
-
+import re
 
 class MRDegreeCentrality(MRJob):
 
     def mapper(self, _, line):
-        start, end, weight = line.split(',')
+        start, end, weight = re.findall(r'"[^"\\]*(?:\\.[^"\\]*)*"|[^,]+',line)
+        start = start.replace("\"", "")
+        end = end.replace("\"", "")
         weight = int(weight)
         yield str(start), weight
         yield str(end), weight
