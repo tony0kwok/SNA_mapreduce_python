@@ -100,8 +100,12 @@ Please following the intruction below to do the set up. If you have any problem,
   - Google Cloud Storage JSON API
   * Google Cloud Dataproc API
 
-* Under Credentials, Create Credentials and select Service account key. Then, select New service account, enter a Name and select Key type JSON.
-Install the Google Cloud SDK
+* Under ***Credentials***, ***Create Credentials*** and select ***Service account key***. Then, select ***New service account***, enter a Name and select Key type ***JSON***.
+[Install the Google Cloud SDK](https://cloud.google.com/sdk/)
+
+[Dataproc Documentation](https://cloud.google.com/dataproc/overview)
+
+[How GCP Default credentials work](https://developers.google.com/identity/protocols/application-default-credentials#howtheywork)
 
 ***[IMPORTANT]*** After you have download a credential, you have to declare it every time you start a new shell to process!!!!
 you can always do this by typing:
